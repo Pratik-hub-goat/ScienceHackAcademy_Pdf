@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ScienceHackAcademy - PDF Library</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Cloudinary Upload Widget -->
+    <script
+        src="https://upload-widget.cloudinary.com/latest/global/all.js"
+        type="text/javascript"
+    ></script>
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div>
+
+        <h1>🌹 ScienceHackAcademy</h1>
+
+        <p>PDF Study Library</p>
+
+    </div>
+
+
+    <button id="admin-login-btn">
+        Admin Login
+    </button>
+
+</header>
+
+
+
+<main>
+
+
+    <section class="hero">
+
+        <h2>📚 Study Library</h2>
+
+        <p>
+            Find your ScienceHackAcademy notes,
+            chapters and study materials.
+        </p>
+
+    </section>
+
+
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+        <input
+            id="pdf-search"
+            type="search"
+            placeholder="🔎 Search PDF by title or name..."
+            autocomplete="off"
+        >
+
+    </section>
+
+
+
+    <!-- PDF LIBRARY -->
+
+    <section class="library">
+
+        <div class="section-title">
+
+            <h2>Available PDFs</h2>
+
+        </div>
+
+
+        <div
+            id="pdf-list"
+            class="pdf-grid"
+        >
+
+            <div class="loading">
+                Loading PDFs...
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     ADMIN LOGIN MODAL
+========================= -->
+
+<div
+    id="login-modal"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+        <button
+            id="close-login"
+            class="close-button"
+            type="button"
+        >
+            ×
+        </button>
+
+
+        <h2>Admin Login</h2>
+
+
+        <input
+            id="login-email"
+            type="email"
+            placeholder="Admin email"
+            autocomplete="username"
+        >
+
+
+        <input
+            id="login-password"
+            type="password"
+            placeholder="Admin password"
+            autocomplete="current-password"
+        >
+
+
+        <button
+            id="login-btn"
+            type="button"
+        >
+            Sign In
+        </button>
+
+
+        <p id="login-message"></p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     ADMIN DASHBOARD
+========================= -->
+
+<section
+    id="admin-dashboard"
+    class="admin-dashboard hidden"
+>
+
+    <div class="admin-dashboard-box">
+
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h2>🛠️ Admin Dashboard</h2>
+
+                <p>
+                    Manage the ScienceHackAcademy PDF library.
+                </p>
+
+            </div>
+
+
+            <button
+                id="admin-logout-btn"
+                class="logout-button"
+                type="button"
+            >
+                Sign Out
+            </button>
+
+        </div>
+
+
+
+        <hr>
+
+
+
+        <!-- UPLOAD -->
+
+        <h3>📤 Upload New PDF</h3>
+
+
+        <p class="admin-help">
+            Choose a PDF from your phone, give it a title,
+            and upload it to the study library.
+        </p>
+
+
+        <div class="upload-form">
+
+
+            <label>
+                PDF file
+            </label>
+
+
+            <input
+                id="pdf-file"
+                type="file"
+                accept="application/pdf,.pdf"
+            >
+
+
+            <label>
+                PDF title / name
+            </label>
+
+
+            <input
+                id="pdf-title"
+                type="text"
+                placeholder="Example: Chapter 5 - Light"
+            >
+
+
+            <label>
+                Subject
+            </label>
+
+
+            <input
+                id="pdf-subject"
+                type="text"
+                placeholder="Example: Physics"
+            >
+
+
+            <label>
+                Class
+            </label>
+
+
+            <input
+                id="pdf-grade"
+                type="text"
+                placeholder="Example: 10"
+            >
+
+
+            <label>
+                Description
+            </label>
+
+
+            <textarea
+                id="pdf-description"
+                placeholder="Short description of this PDF..."
+                rows="3"
+            ></textarea>
+
+
+            <button
+                id="upload-pdf-btn"
+                type="button"
+                class="primary-button"
+            >
+                📤 Upload PDF
+            </button>
+
+
+            <div
+                id="upload-status"
+                class="upload-status"
+            ></div>
+
+        </div>
+
+
+
+        <hr>
+
+
+
+        <!-- PDF MANAGER -->
+
+        <h3>📂 PDF Manager</h3>
+
+
+        <div
+            id="admin-pdf-list"
+            class="admin-pdf-list"
+        >
+
+            <p class="admin-help">
+                Loading PDF manager...
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script
+    type="module"
+    src="script.js"
+></script>
+
+
+</body>
+
+</html>
